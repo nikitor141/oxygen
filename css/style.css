@@ -527,7 +527,6 @@ a, a:visited, :active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 12px;
 }
 
 .portfolio__img {
@@ -767,9 +766,6 @@ a, a:visited, :active {
   letter-spacing: 0.085em;
   background: transparent;
   line-height: 2;
-  -ms-flex-item-align: stretch;
-      -ms-grid-row-align: stretch;
-      align-self: stretch;
 }
 
 .contact__body {
