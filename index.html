@@ -6,17 +6,20 @@
    <meta name="viewport" content="width=1440">
    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
    <link rel="shortcut icon" href="img/icons/Logo.svg" type="image/x-icon">
+   <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
    <link rel="stylesheet" href="css/style.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="js/script.js"></script>
+   <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
    <title>Oxygen</title>
 </head>
 
 <body>
    <div class="wrapper">
-      <header class="header">
+      <header class="header" id="home">
          <div class="header__fullscreen">
             <div class="header__top">
                <div class="container container--1336">
@@ -31,22 +34,22 @@
                      <nav class="menu header__menu">
                         <ul class="menu__list">
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link btn-active">HOME</a>
+                              <a href="#home" class="menu__link btn-active">HOME</a>
                            </li>
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link">ABOUT US</a>
+                              <a href="#about" class="menu__link">ABOUT US</a>
                            </li>
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link">PORTFOLIO</a>
+                              <a href="#portfolio" class="menu__link">PORTFOLIO</a>
                            </li>
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link">OUR TEAM</a>
+                              <a href="#team" class="menu__link">OUR TEAM</a>
                            </li>
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link">BLOG</a>
+                              <a href="#blog" class="menu__link">BLOG</a>
                            </li>
                            <li class="menu__list-item">
-                              <a href="#" class="menu__link">CONTACT</a>
+                              <a href="#contact" class="menu__link">CONTACT</a>
                            </li>
                         </ul>
                      </nav>
@@ -65,7 +68,7 @@
          </div>
       </header>
       <main class="content">
-         <section class="about">
+         <section class="about" id="about">
             <div class="container">
                <div class="about__body">
                   <h2 class="title">About Us</h2>
@@ -162,7 +165,7 @@
                </div>
             </div>
          </section>
-         <section class="features">
+         <section class="features" id="blog">
             <div class="container container--1440">
                <div class="features__body">
                   <div class="features__img">
@@ -193,7 +196,7 @@
                </div>
             </div>
          </section>
-         <section class="portfolio">
+         <section class="portfolio" id="portfolio">
             <div class="container container--1440">
                <div class="portfolio__top">
                   <div class="container">
@@ -201,26 +204,26 @@
                         <h2 class="title">Portfolio</h2>
                         <ul class="portfolio__filter">
                            <li class="portfolio__filter-item">
-                              <button class="portfolio__filter-btn btn-active">ALL</button>
+                              <button class="portfolio__filter-btn btn-active" id="filter-all">ALL</button>
                            </li>
                            <li class="portfolio__filter-item">
-                              <button class="portfolio__filter-btn">BRANDING</button>
+                              <button class="portfolio__filter-btn" id="filter-branding">BRANDING</button>
                            </li>
                            <li class="portfolio__filter-item">
-                              <button class="portfolio__filter-btn">BRANDING</button>
+                              <button class="portfolio__filter-btn" id="filter-branding--2">BRANDING</button>
                            </li>
                            <li class="portfolio__filter-item">
-                              <button class="portfolio__filter-btn">PHOTOGRAPHY</button>
+                              <button class="portfolio__filter-btn" id="filter-photo">PHOTOGRAPHY</button>
                            </li>
                            <li class="portfolio__filter-item">
-                              <button class="portfolio__filter-btn">ILLUSTRATION</button>
+                              <button class="portfolio__filter-btn" id="filter-illustration">ILLUSTRATION</button>
                            </li>
                         </ul>
                      </div>
                   </div>
                </div>
                <div class="portfolio__images">
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-all">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_1.jpg" alt="picture">
                      </div>
@@ -229,7 +232,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-all">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_2.jpg" alt="picture">
                      </div>
@@ -238,7 +241,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-all f-branding2">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_3.jpg" alt="picture">
                      </div>
@@ -247,7 +250,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-branding">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_4.jpg" alt="picture">
                      </div>
@@ -256,7 +259,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-branding f-illustration">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_5.jpg" alt="picture">
                      </div>
@@ -265,7 +268,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-branding">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_6.jpg" alt="picture">
                      </div>
@@ -274,7 +277,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-branding2 f-photo">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_7.jpg" alt="picture">
                      </div>
@@ -283,7 +286,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-photo">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_8.jpg" alt="picture">
                      </div>
@@ -292,7 +295,7 @@
                         <div class="portfolio__image-subtitle">DESIGN</div>
                      </div>
                   </div>
-                  <div class="portfolio__image-item">
+                  <div class="portfolio__image-item f-illustration">
                      <div class="portfolio__img">
                         <img src="img/content/portfolio_9.jpg" alt="picture">
                      </div>
@@ -345,72 +348,82 @@
             </div>
          </section>
          <section class="slider">
-            <div class="container">
-               <div class="slider__body">
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+            <!-- <div class="container"> -->
+            <div class="slider__body">
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+               </div>
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+               </div>
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+               </div>
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+               </div>
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
-                  <div class="slider__item">
-                     <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
-                     <div class="text text--lighter slider__item-text">
-                        <p>
-                           The path of the righteous man is beset on all sides by the iniquities of the selfish and the
-                           tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
-                           weak through the valley of darkness, for he is truly his brother's.
-                        </p>
-                     </div>
+               </div>
+               <div class="slider__item">
+                  <h3 class="slider__item-title">Then they show that show to the people who make shows</h3>
+                  <div class="text text--lighter slider__item-text">
+                     <p>
+                        The path of the righteous man is beset on all sides by the iniquities of the selfish and the
+                        tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the
+                        weak through the valley of darkness, for he is truly his brother's.
+                     </p>
                   </div>
                </div>
             </div>
+            <!-- </div> -->
          </section>
-         <section class="team">
+         <section class="team" id="team">
             <div class="container">
                <div class="team__body">
                   <h2 class="title">Our Team</h2>
@@ -485,7 +498,7 @@
                </div>
             </div>
          </section>
-         <section class="contact">
+         <section class="contact" id="contact">
             <div class="container container--1440">
                <div class="contact__body">
                   <div class="contact__content">

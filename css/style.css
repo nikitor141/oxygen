@@ -637,6 +637,63 @@ a, a:visited, :active {
 
 .slider {
   background: #f6f8fa;
+  padding: 110px 0;
+  position: relative;
+}
+
+.slider__body {
+  padding: 0 97.5px;
+  max-width: 1365px;
+  margin: 0 auto;
+}
+
+.slick-list {
+  margin: 0 0 200px 0;
+}
+
+.slick-arrow {
+  font-size: 0;
+  position: absolute;
+  top: 95px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background: url("../img/icons/slider-arrow.svg") center/contain no-repeat transparent;
+}
+
+.slick-prev {
+  left: 0;
+  -webkit-transform: translateY(-50%) rotateZ(180deg);
+          transform: translateY(-50%) rotateZ(180deg);
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 15px;
+}
+.slick-dots button {
+  font-size: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(36, 33, 33, 0.4);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.slick-dots .slick-active button {
+  width: 11px;
+  height: 11px;
+  background: black;
 }
 
 .slider__item-title {
