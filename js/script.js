@@ -74,8 +74,8 @@ $(function () {
    //portfolio filter on data attributes ------------------
    const TITLE_NAME = $('#portfolio__title').text();
    $('.portfolio__filter-btn').click(function () {
-      btn = $(this);
-      btnCat = btn.data('category');
+      const btn = $(this);
+      let btnCat = btn.data('category');
       if (btnCat == 'all') {
          all_show();
          $('#portfolio__title').text(TITLE_NAME);
@@ -83,11 +83,11 @@ $(function () {
       }
       else {
          $('.portfolio__image-item').each(function () {
-            itemCat = $(this).data('category');
+            let itemCat = $(this).data('category');
             if (btnCat == itemCat) {
                console.log('Shows this - ', itemCat);
 
-               btnText = btn.text();
+               let btnText = btn.text();
                $('#portfolio__title').text(btnText);
 
                $(this).show();
