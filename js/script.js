@@ -1,9 +1,10 @@
 $(function () {
+   //slider settings --------------------------------------
    $('.slider__body').slick(
       {
          adaptiveHeight: true,
          dots: true,
-         // autoplay: true,
+         autoplay: true,
          draggable: false,
          responsive: [
             {
@@ -15,29 +16,44 @@ $(function () {
          ]
       }
    );
+   //------------------------------------------------------
    $('.menu__link').click(function () {
       $('.menu__link').removeClass('btn-active');
       $(this).addClass('btn-active');
+      //доделать - при клике на ссылки из бургера кроме home скрывать header
+      if ($(this).attr('href') != '#home') {
+         $('.menu__link').data('clicked', true);
+      }
+      setTimeout(function () { $('.menu__link').data('clicked', false) }, 1000);//костыль работает по задержке
    });
-
-   var lastScrollTop = 0;
+   //выезжающий-заезжающий хедер --------------------------
+   let lastScrollTop = 0;
    $(window).scroll(function (event) {
-      var st = $(this).scrollTop();
+      let headerHeight = $('.header__top').outerHeight();
+      let st = $(this).scrollTop();
       if (st > lastScrollTop) {
-         // downscroll code
-         if (st > 94) {
+         if (st > headerHeight) {
             $('.header__top').css('transform', 'translateY(-100%)');
+            $('.features__img').css('top', '0');
          }
       } else {
-         // upscroll code
-         $('.header__top').css('transform', 'translateY(0)');
+         if ($('.menu__link').data('clicked')) {
+            console.log('clicked');
+            $('.header__top').css('transform', 'translateY(-100%)');
+            $('.features__img').css('top', '0');
+         }
+         else {
+            $('.header__top').css('transform', 'translateY(0)');
+            $('.features__img').css('top', headerHeight + 'px');
+         }
       }
       lastScrollTop = st;
    });
 
+   //------------------------------------------------------
 
 
-
+   //анимация скрола при нажатии на якоря -----------------
    $(document).on('click', 'a[href^="#"]', function (event) {
       event.preventDefault();
 
@@ -45,6 +61,7 @@ $(function () {
          scrollTop: $($.attr(this, 'href')).offset().top
       }, 500);
    });
+   //------------------------------------------------------
 
    $('.burger').click(function () {
       $('.burger,.menu__list,body').toggleClass('active');
@@ -56,40 +73,33 @@ $(function () {
    $('.portfolio__mobile-filter').click(function () {
       $('.portfolio__filter').toggleClass('active');
    });
-   $('.portfolio__filter-btn').click(function () {
-      $('.portfolio__filter').removeClass('active');
-   });
 
-   //доделать data- ---------------------------------------
+
+   //portfolio filter on data attributes ------------------
    function all_show() {
       $('.portfolio__image-item').show();
    }
-   $('.portfolio__filter-btn').click(function () {
-      $('.portfolio__filter-btn').removeClass('btn-active');
-      $(this).addClass('btn-active');
-      // all_show();
-      // $('.portfolio__image-item').hide()
-   });
-
-   //portfolio filter on data attributes ------------------
    const TITLE_NAME = $('#portfolio__title').text();
    $('.portfolio__filter-btn').click(function () {
+      $('.portfolio__filter').removeClass('active');
+      $('.portfolio__filter-btn').removeClass('btn-active');
+      $(this).addClass('btn-active');
+
       const btn = $(this);
+      $('#portfolio__title').fadeOut().fadeIn();
       let btnCat = btn.data('category');
       if (btnCat == 'all') {
          all_show();
-         $('#portfolio__title').text(TITLE_NAME);
          console.log('Show all of this');
+         setTimeout(function () { $('#portfolio__title').text(TITLE_NAME) }, 400);
       }
       else {
+         let btnText = btn.text();
+         setTimeout(function () { $('#portfolio__title').text(btnText) }, 400);
          $('.portfolio__image-item').each(function () {
             let itemCat = $(this).data('category');
             if (btnCat == itemCat) {
                console.log('Shows this - ', itemCat);
-
-               let btnText = btn.text();
-               $('#portfolio__title').text(btnText);
-
                $(this).show();
             }
             else {
