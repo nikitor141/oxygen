@@ -4,7 +4,6 @@ $(function () {
       {
          adaptiveHeight: true,
          dots: true,
-         autoplay: true,
          draggable: false,
          responsive: [
             {
@@ -27,24 +26,41 @@ $(function () {
       setTimeout(function () { $('.menu__link').data('clicked', false) }, 1000);//костыль работает по задержке
    });
    //выезжающий-заезжающий хедер --------------------------
+   // let headerHeight = $('.header__top').outerHeight();
+   // $('.menu__list').css('--header-height', headerHeight + 'px');
+
+   // $(window).resize(function () {
+   //    headerHeight = $('.header__top').outerHeight();
+   //    $('.menu__list').css('--header-height', headerHeight + 'px');
+   // });
+
    let lastScrollTop = 0;
    $(window).scroll(function (event) {
       let headerHeight = $('.header__top').outerHeight();
       let st = $(this).scrollTop();
+      let titleHeight = $('#portfolio__title').outerHeight();
       if (st > lastScrollTop) {
          if (st > headerHeight) {
+            //    scroll down 
             $('.header__top').css('transform', 'translateY(-100%)');
             $('.features__img').css('top', '0');
+
+            $('.portfolio__top').css('top', -(titleHeight + 50));
          }
       } else {
          if ($('.menu__link').data('clicked')) {
+            // scroll up on header menu click
             console.log('clicked');
             $('.header__top').css('transform', 'translateY(-100%)');
             $('.features__img').css('top', '0');
          }
          else {
+            // scroll up without header menu click
             $('.header__top').css('transform', 'translateY(0)');
             $('.features__img').css('top', headerHeight + 'px');
+
+            // let titleHeight = $('#portfolio__title').outerHeight();
+            $('.portfolio__top').css('top', -(titleHeight - headerHeight + 50));
          }
       }
       lastScrollTop = st;
@@ -70,10 +86,6 @@ $(function () {
       $('.burger,.menu__list,body').removeClass('active');
    });
 
-   $('.portfolio__mobile-filter').click(function () {
-      $('.portfolio__filter').toggleClass('active');
-   });
-
 
    //portfolio filter on data attributes ------------------
    function all_show() {
@@ -81,7 +93,6 @@ $(function () {
    }
    const TITLE_NAME = $('#portfolio__title').text();
    $('.portfolio__filter-btn').click(function () {
-      $('.portfolio__filter').removeClass('active');
       $('.portfolio__filter-btn').removeClass('btn-active');
       $(this).addClass('btn-active');
 
@@ -111,4 +122,12 @@ $(function () {
       }
    });
    //------------------------------------------------------
+   // progress-bar--------------------------------------------
+   $('.expertise__content-progress span').each(function () {
+      let barProgress = $(this).parent().data('progress');
+      $(this).parent().attr('aria-valuenow', barProgress);
+      $(this).css('width', barProgress + '%').text(barProgress + '%');
+   });
+   //------------------------------------------------------
+
 });
