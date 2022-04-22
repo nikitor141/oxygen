@@ -3,13 +3,12 @@
 
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="shortcut icon" href="img/icons/Logo.svg" type="image/x-icon">
    <link rel="stylesheet" href="css/style.css">
    <script defer src="js/jquery.min.js"></script>
-   <script defer src="js/script.js"></script>
    <script defer src="js/slick.min.js"></script>
-
+   <script defer src="js/script.js"></script>
    <title>Oxygen</title>
 </head>
 
@@ -29,12 +28,12 @@
                         </div>
                      </a>
                      <nav class="menu header__menu">
-                        <button class="burger" aria-label="Mobile menu buttom">
+                        <button class="burger" aria-label="Mobile menu button.">
                            <span></span>
                         </button>
                         <ul class="menu__list">
                            <li class="menu__list-item">
-                              <a href="#home" class="menu__link btn-active">HOME</a>
+                              <a href="#home" class="menu__link btn-active" tabindex="0">HOME</a>
                            </li>
                            <li class="menu__list-item">
                               <a href="#about" class="menu__link">ABOUT US</a>
@@ -115,17 +114,17 @@
                   <div class="expertise__content">
                      <div class="expertise__content-charts">
                         <div class="expertise__content-progress" data-progress="80" role="progressbar" aria-valuemin="0"
-                           aria-valuemax="100">
+                           aria-valuemax="100" aria-label="Branding.">
                            <span></span>
                         </div>
                         <div class="expertise__content-chart">BRANDING</div>
                         <div class="expertise__content-progress" data-progress="65" role="progressbar" aria-valuemin="0"
-                           aria-valuemax="100">
+                           aria-valuemax="100" aria-label="Design.">
                            <span></span>
                         </div>
                         <div class="expertise__content-chart">DESIGN</div>
                         <div class="expertise__content-progress" data-progress="95" role="progressbar" aria-valuemin="0"
-                           aria-valuemax="100">
+                           aria-valuemax="100" aria-label="Development.">
                            <span></span>
                         </div>
                         <div class="expertise__content-chart">DEVELOPMENT</div>
@@ -147,7 +146,7 @@
                         <div class="expertise__item-img">
                            <picture>
                               <source srcset="img/icons/curves.svg" type="image/svg+xml">
-                              <img src="img/icons/curves.png" alt="bezier curves">
+                              <img src="img/icons/curves.png" alt="bezier curves" width="50" height="51">
                            </picture>
                         </div>
                         <div class="expertise__item-text">
@@ -165,7 +164,7 @@
                         <div class="expertise__item-img">
                            <picture>
                               <source srcset="img/icons/monitor.svg" type="image/svg+xml">
-                              <img src="img/icons/monitor.png" alt="monitor">
+                              <img src="img/icons/monitor.png" alt="monitor" width="50" height="51">
                            </picture>
                         </div>
                         <div class="expertise__item-text">
@@ -183,7 +182,7 @@
                         <div class="expertise__item-img">
                            <picture>
                               <source srcset="img/icons/speaker.svg" type="image/svg+xml">
-                              <img src="img/icons/speaker.png" alt="speaker">
+                              <img src="img/icons/speaker.png" alt="speaker" width="50" height="51">
                            </picture>
                         </div>
                         <div class="expertise__item-text">
@@ -441,7 +440,7 @@
          </section>
          <section class="video">
             <div class="video__content">
-               <video loop autoplay muted preload="metadata">
+               <video loop autoplay muted preload="metadata" tabindex="-1">
                   <source src="video/colorado.webm">
                   <source src="video/colorado.mp4">
                </video>
@@ -554,7 +553,7 @@
                         <div class="team__item-img">
                            <picture>
                               <source srcset="img/content/Team-Ceo.webp" type="image/webp">
-                              <img src="img/content/Team-Ceo.jpg" alt="Ceo">
+                              <img src="img/content/Team-Ceo.jpg" alt="Ceo" width="370" height="440">
                            </picture>
                         </div>
                         <div class="team__item-name">BERNARD SPARKS</div>
@@ -564,7 +563,7 @@
                         <div class="team__item-img">
                            <picture>
                               <source srcset="img/content/team-co-founder.webp" type="image/webp">
-                              <img src="img/content/team-co-founder.jpg" alt="Co-founder">
+                              <img src="img/content/team-co-founder.jpg" alt="Co-founder" width="370" height="440">
                            </picture>
                         </div>
                         <div class="team__item-name">MINERVA BENSON</div>
@@ -574,7 +573,7 @@
                         <div class="team__item-img">
                            <picture>
                               <source srcset="img/content/team-sales.webp" type="image/webp">
-                              <img src="img/content/team-sales.jpg" alt="Sales">
+                              <img src="img/content/team-sales.jpg" alt="Sales" width="370" height="440">
                            </picture>
                         </div>
                         <div class="team__item-name">JARED OLSON</div>
@@ -647,7 +646,7 @@
                   <div class="contact__map">
                      <iframe
                         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5909.798067606742!2d2.3406584482778285!3d48.85966331356476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1647012266667!5m2!1sru!2sru"
-                        style="border:0;" allowfullscreen="" loading="lazy" aria-label="Google map"></iframe>
+                        style="border:0;" allowfullscreen="" loading="lazy" aria-label="Google map."></iframe>
                   </div>
                </div>
             </div>
@@ -690,7 +689,7 @@
                      <a class="footer__phone" href="tel:0038765252222">(00387) 65 252 222</a>
                      <a class="footer__email" href="mailto:info@mail.com">info@mail.com</a>
                   </div>
-                  <a class="footer__arrow" href="#home" aria-label="Scroll up button"></a>
+                  <a class="footer__arrow" href="#home" title="Scroll up"></a>
                </div>
             </div>
          </div>

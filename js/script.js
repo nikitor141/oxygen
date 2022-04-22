@@ -59,7 +59,6 @@ $(function () {
             $('.header__top').css('transform', 'translateY(0)');
             $('.features__img').css('top', headerHeight + 'px');
 
-            // let titleHeight = $('#portfolio__title').outerHeight();
             $('.portfolio__top').css('top', -(titleHeight - headerHeight + 50));
          }
       }
@@ -129,5 +128,12 @@ $(function () {
       $(this).css('width', barProgress + '%').text(barProgress + '%');
    });
    //------------------------------------------------------
-
+   $('.contact__form-input,.contact__form-textarea').blur(function () {
+      if (!$(this).val()) {
+         $(this).addClass('error');
+      }
+      else {
+         $(this).removeClass('error')
+      }
+   });
 });
